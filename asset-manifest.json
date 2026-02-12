@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gpu-student-portal/static/css/main.b1e3e526.css",
+    "main.js": "/gpu-student-portal/static/js/main.7b3e3460.js",
+    "index.html": "/gpu-student-portal/index.html",
+    "main.b1e3e526.css.map": "/gpu-student-portal/static/css/main.b1e3e526.css.map",
+    "main.7b3e3460.js.map": "/gpu-student-portal/static/js/main.7b3e3460.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1e3e526.css",
+    "static/js/main.7b3e3460.js"
+  ]
+}
