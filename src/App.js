@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { Routes, Route } from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
+
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import RequestGPU from "./pages/RequestGPU";
+import Profile from "./pages/Profile";
 
 function App() {
+  const { user } = useContext(AuthContext);
+
+  if (!user) return <Login />;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/request" element={<RequestGPU />} />
+      <Route path="/profile" element={<Profile />} />
+    </Routes>
   );
 }
 

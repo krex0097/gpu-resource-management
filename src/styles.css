@@ -1,0 +1,298 @@
+
+      /* ================= THEME ================= */
+      :root {
+        --bg: #fffaf5;
+        --card: #ffffff;
+        --text: #000;
+        --primary: rgb(208, 92, 35);
+        --border: #e0e0e0;
+        --muted: #666;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      h2,
+      h3 {
+        margin-top: 0;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      button {
+        padding: 10px 18px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+      }
+
+      /* ================= LAYOUT ================= */
+      .container {
+        display: flex;
+        min-height: 85vh;
+      }
+
+      .sidebar {
+        width: 230px;
+        background: var(--primary);
+        color: white;
+        padding: 30px 15px;
+        min-height: 100vh; 
+      }
+
+      .sidebar h3 {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .sidebar p {
+        margin: 16px 12px;
+        font-size: 17px; /* slightly bigger */
+        padding: 6px 10px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between; /* space for > */
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .sidebar p::after {
+        content: ">";
+        margin-left: auto;
+        opacity: 0.7;
+      }
+
+      .sidebar p:hover {
+        background: rgba(0, 0, 0, 0.2); /* darker on hover */
+      }
+
+      .main {
+        flex: 1;
+        padding: 35px;
+      }
+
+      /* ================= NAVBAR ================= */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 14px;
+        margin-bottom: 30px;
+      }
+
+      /* ================= CARDS ================= */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 22px;
+      }
+      /* Tighter grid for Academic Profile only */
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 22px;
+      }
+
+      .card small {
+        color: var(--muted);
+      }
+
+      /* ================= LOGIN ================= */
+      .login-wrapper {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-box {
+        width: 360px;
+        padding: 35px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .error {
+        color: red;
+        font-size: 13px;
+        margin-top: -8px;
+        margin-bottom: 12px;
+      }
+
+
+      /* ================= PROFILE DROPDOWN ================= */
+      .profile-wrapper {
+        position: relative;
+      }
+
+      .profile-pill {
+        background: transparent; /* default: NO background */
+        color: #000;
+        padding: 8px 14px;
+        border-radius: 999px; /* fully round */
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .profile-wrapper:hover .profile-pill {
+        background: var(--primary); /* orange ONLY on hover */
+        color: white;
+      }
+
+      .profile-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      }
+
+
+     .profile-dropdown {
+        position: absolute;
+        right: 0;
+        top: 45px;
+        background: white;
+        width: 220px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        padding: 8px;
+        z-index: 1000;
+    }
+
+      .profile-dropdown.show {
+        display: block;
+      }
+
+      .profile-dropdown p {
+        margin: 6px 0;
+        padding: 10px;
+        border-radius: 999px; /* fully round */
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .profile-dropdown p:hover {
+        background: var(--primary); /* orange ONLY on hover */
+        color: white;
+      }
+
+      .profile-dropdown-header {
+        background: var(--primary);
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+      }
+
+      .profile-dropdown-content {
+        padding: 15px;
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 720px) {
+        .container {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+        }
+      }
+      /* ===== HIGHLIGHTED VALUES ===== */
+      .value {
+        font-size: 20px; /* reduced */
+        font-weight: 600;
+        color: #000; /* BLACK */
+        margin: 4px 0 14px;
+      }
+
+      .label {
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.4px;
+      }
+
+      /* ===== CARD HOVER EFFECT ===== */
+      .card {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        border-color: var(--primary);
+      }
+
+      /* ===== ENTRY ANIMATION ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .grid .card {
+        animation: fadeUp 0.6s ease forwards;
+      }
+
+      .grid .card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .grid .card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .grid .card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      /* ===== REQUEST PAGE CENTERING ===== */
+      .request-card {
+        max-width: 520px;
+        margin: 0 auto; /* centers horizontally */
+      }
+
+      /* Center submit button */
+      .request-card button {
+        display: block;
+        margin: 20px auto 0;
+      }
