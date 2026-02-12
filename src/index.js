@@ -7,7 +7,7 @@ import { AuthProvider } from "./context/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <HashRouter basename="/gpu-resource-management">
+  <HashRouter>
     <AuthProvider>
       <App />
     </AuthProvider>
