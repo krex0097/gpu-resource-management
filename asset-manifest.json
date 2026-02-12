@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/gpu-resource-management/static/css/main.b1e3e526.css",
-    "main.js": "/gpu-resource-management/static/js/main.5f1dba8e.js",
+    "main.js": "/gpu-resource-management/static/js/main.5e24d1f2.js",
     "index.html": "/gpu-resource-management/index.html",
     "main.b1e3e526.css.map": "/gpu-resource-management/static/css/main.b1e3e526.css.map",
-    "main.5f1dba8e.js.map": "/gpu-resource-management/static/js/main.5f1dba8e.js.map"
+    "main.5e24d1f2.js.map": "/gpu-resource-management/static/js/main.5e24d1f2.js.map"
   },
   "entrypoints": [
     "static/css/main.b1e3e526.css",
-    "static/js/main.5f1dba8e.js"
+    "static/js/main.5e24d1f2.js"
   ]
 }
